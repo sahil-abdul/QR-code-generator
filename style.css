@@ -1,0 +1,155 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body{
+  display: flex;
+  padding: 0 10px;
+  min-height: 100vh;
+  align-items: center;
+  background: #3498DB;
+  justify-content: center;
+}
+::selection{
+  color: #fff;
+  background: #3498DB;
+}
+nav{
+ position: absolute;
+  top: 0px;
+  height: 10%;
+  /* background-color: #696969; */
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav div{
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+
+  /* background-color: #696969; */
+}
+nav div button{
+  border: 2px solid white;
+  height: 50%;
+  width:24%;
+  border-radius: 10px;
+  background: transparent;
+  color: white;
+}
+.wrapper{
+  height: 265px;
+  max-width: 410px;
+  background: #fff;
+  border-radius: 7px;
+  padding: 20px 25px 0;
+  transition: height 0.2s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+.wrapper.active{
+  height: 530px;
+}
+header h1{
+  font-size: 21px;
+  font-weight: 500;
+}
+header p{
+  margin-top: 5px;
+  color: #575757;
+  font-size: 16px;
+}
+.wrapper .form{
+  margin: 20px 0 25px;
+}
+.form :where(input, button){
+  width: 100%;
+  height: 55px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  transition: 0.1s ease;
+}
+.form input{
+  font-size: 18px;
+  padding: 0 17px;
+  border: 1px solid #999;
+}
+.form input:focus{
+  box-shadow: 0 3px 6px rgba(0,0,0,0.13);
+}
+.form input::placeholder{
+  color: #999;
+}
+.form button{
+  color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
+  font-size: 17px;
+  background: #3498DB;
+}
+.qr-code{
+  opacity: 0;
+  display: flex;
+  padding: 33px 0;
+  border-radius: 5px;
+  align-items: center;
+  pointer-events: none;
+  justify-content: center;
+  border: 1px solid #ccc;
+}
+.wrapper.active .qr-code{
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.5s 0.05s ease;
+}
+.qr-code img{
+  width: 170px;
+}
+.link{
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+  width: 50%;
+  position: absolute;
+  bottom: 0px;
+ margin-left: 10px;
+ padding: 10px;
+ 
+}
+.link div i{
+  border: 2px solid black;
+  padding: 5px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@media (max-width: 430px){
+  .wrapper{
+    height: 255px;
+    padding: 16px 20px;
+  }
+  .wrapper.active{
+    height: 510px;
+  }
+  header p{
+    color: #696969;
+  }
+  .form :where(input, button){
+    height: 52px;
+  }
+  .qr-code img{
+    width: 160px;
+  }  
+  .link{
+    width: 100%;
+  }
+}
